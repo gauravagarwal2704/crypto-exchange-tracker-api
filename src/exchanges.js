@@ -133,8 +133,8 @@ var unocoin = {
 }
 
 var exchanges = [ 
-					koinex, 
-					bitbns, 
+					bitbns,
+					koinex,
 					zebpay, 
 					coinsecure, 
 					coindelta, 
