@@ -141,15 +141,9 @@ var pocketbits = {
 		"eth":"https://pocketbits.in/AltCoins/GetFrontDataBuySell"
 	},
 	transform: function(data) {
+		console.log(data);
 		
-		var prices = data.map(o => {
-			return {
-				name: o.MarketName.toLowerCase(),
-				buy: o.BuyPrice,
-				sell: o.SellPrice
-			}
-		})
-		return {name:this.name, image:this.image, prices:prices}
+		return {name:this.name, image:this.image}
 	}
 	
 }
