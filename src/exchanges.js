@@ -159,7 +159,8 @@ var exchanges = [
 					coindelta, 
 					// btcxindia, 
 					throughbit, 
-					unocoin 
+					unocoin,
+					pocketbits
 				]
 
 module.exports = exchanges
