@@ -152,12 +152,12 @@ var pocketbits = {
 var exchanges = [ 
 					bitbns,
 					koinex,
+					coindelta,
+					throughbit,
 					zebpay, 
-					coinsecure, 
-					coindelta, 
-					// btcxindia, 
-					throughbit, 
-					unocoin,
+					coinsecure,
+					// btcxindia,
+					//unocoin,
 					pocketbits
 				]
 
