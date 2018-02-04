@@ -136,7 +136,10 @@ var unocoin = {
 var pocketbits = {
 	name: "pocketbits",
 	image: "images/exchanges/pocketbits.png",
-	url:"https://pocketbits.in/AltCoins/GetFrontDataBuySell",
+	urls: {
+		"btc":"https://pocketbits.in/Index/getBTCRate",
+		"eth":"https://pocketbits.in/AltCoins/GetFrontDataBuySell"
+	},
 	transform: function(data) {
 		
 		var prices = data.map(o => {
@@ -150,7 +153,6 @@ var pocketbits = {
 	}
 	
 }
-
 var exchanges = [ 
 					bitbns,
 					koinex,
@@ -159,7 +161,7 @@ var exchanges = [
 					coindelta, 
 					// btcxindia, 
 					throughbit, 
-					//unocoin,
+					unocoin,
 					pocketbits
 				]
 
