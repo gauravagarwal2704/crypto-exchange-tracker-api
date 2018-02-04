@@ -136,16 +136,18 @@ var unocoin = {
 var pocketbits = {
 	name: "pocketbits",
 	image: "images/exchanges/pocketbits.png",
-	urls: {
-		"btc":"https://pocketbits.in/Index/getBTCRate",
-		"eth":"https://pocketbits.in/AltCoins/GetFrontDataBuySell"
-	},
+	url:"https://pocketbits.in/AltCoins/GetFrontDataBuySell",
 	transform: function(data) {
-		console.log(data);
 		
-		return {name:this.name, image:this.image}
-	}
-	
+		var prices = data.map(o => {
+			return {
+				name: o.MarketName.toLowerCase(),
+				buy: o.BuyPrice,
+				sell: o.SellPrice
+			}
+		})
+		return {name:this.name, image:this.image, prices:prices}
+	}	
 }
 var exchanges = [ 
 					bitbns,
