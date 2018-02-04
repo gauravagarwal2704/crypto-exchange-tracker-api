@@ -119,6 +119,7 @@ var throughbit = {
 
 var unocoin = {
 	name: "unocoin",
+	image: "images/exchanges/unocoin.png",
 	url: "https://www.unocoin.com/trade?all",
 	// only btc
 	transform: function(data) {
@@ -128,8 +129,26 @@ var unocoin = {
 			buy: data.buy,
 			sell: data.sell
 		}]
-		return {name:this.name, prices:prices}
+		return {name:this.name, image:this.image, prices:prices}
 	}
+}
+
+var pocketbits = {
+	name: "pocketbits",
+	image: "images/exchanges/pocketbits.png",
+	url:"https://pocketbits.in/AltCoins/GetFrontDataBuySell",
+	transform: function(data) {
+		
+		var prices = data.map(o => {
+			return {
+				name: o.MarketName.toLowerCase(),
+				buy: o.BuyPrice,
+				sell: o.SellPrice
+			}
+		})
+		return {name:this.name, image:this.image, prices:prices}
+	}
+	
 }
 
 var exchanges = [ 
@@ -140,7 +159,7 @@ var exchanges = [
 					coindelta, 
 					// btcxindia, 
 					throughbit, 
-					// unocoin 
+					unocoin 
 				]
 
 module.exports = exchanges
